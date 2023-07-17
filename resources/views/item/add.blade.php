@@ -20,7 +20,7 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
+                <form action="{{ url('/message/add')}}" method="POST" class="form-horizontal" >
                     @csrf
                     <div class="card-body">
                         <div class="form-group">

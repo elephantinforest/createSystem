@@ -10,17 +10,18 @@ class Createtableregisters extends Migration
     {
         Schema::create('registers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id');
-            $table->string('service_name', 100);
-            $table->integer('price');
-            $table->string('detail', 500);
-            $table->smallInteger('URL');
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('Subscription', 100);
+            $table->integer('Price');
+            $table->date('Payment_date');
+            $table->string('Detail', 500);
+            $table->string('Url');
             $table->timestamps();
         });
     }
 
-    public function down()
-    {
-        Schema::dropIfExists('services');
-    }
+   public function down()
+{
+    Schema::dropIfExists('registers');
+}
 }
