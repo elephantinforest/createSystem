@@ -225,9 +225,18 @@ return [
 
     'menu' => [
         [
-            'text' => '商品一覧',
-            'url'  => 'items',
+            'text' => '新規登録',
+            'url'  => 'registers/create',
             'icon' => 'fas fa-gamepad',
+            'icon_color' => 'primary',
+        ],
+
+        [
+            'text' => '登録一覧',
+            'url'  => 'registers',
+            'icon' => 'fas fa-gamepad',
+            'icon_color' => 'primary',
+
         ],
 
         // AdminLTEデフォルト

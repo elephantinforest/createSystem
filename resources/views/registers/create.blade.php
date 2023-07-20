@@ -8,6 +8,17 @@
 
 @section('content')
 
+@if ($errors->any())
+    <div class="alert alert-primary">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
 <form action="{{route('store')}}" method="POST" class="form-horizontal">
     @csrf
     <div class="form-group">
@@ -18,19 +29,23 @@
         <label for="price">Price</label>
         <input type="number" name="price" class="form-control" id="price" placeholder="Enter price">
       </div>
-      <div class="form-group">
-        <label for="payment_date">Payment_date</label>
-        <input type="date" name="payment_date" id="payment_date" placeholder="Enter payment_date">
-      </div>
     <div class="form-group">
-        <label for="detail">Service Detail</label>
-        <input type="text" name="detail" class="form-control" id="detail" placeholder="Enter Service Datail">
+        <label for="payment_date">Monthly_payment_date</label>
+        <div>
+        <input type="number" name="payment_date" class= id="price" placeholder="Enter day">
+        </div>
       </div>
+      <div class="form-floating">
+     <label for="floatingTextarea2">Servis detail</label>
+  <textarea  name="detail" class="form-control" placeholder="Enter Servis detail" id="floatingTextarea2" style="height: 100px"></textarea>
+</div>
     <div class="form-group">
         <label for="url">URL</label>
         <input type="text" name="url" class="form-control" id="url" placeholder="Enter Url">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+<x-adminlte-button id="showAlertButton" class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save"/>
+
+
 </form>
 
 @stop

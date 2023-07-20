@@ -13,7 +13,7 @@ class Createtableregisters extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->string('Subscription', 100);
             $table->integer('Price');
-            $table->date('Payment_date');
+            $table->integer('Monthly_payment_date');
             $table->string('Detail', 500);
             $table->string('Url');
             $table->timestamps();

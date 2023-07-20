@@ -13,11 +13,15 @@ class registerController extends Controller
     //
     function index() {
 
-       $registers =  Register::select('id','Subscription','Payment_date', 'Url','Price' )->get();
+        $registers =  Register::where('user_id', Auth::id())->get();
+        $price = Register::where('user_id', Auth::id())->sum('Price');
+        $subscription = Register::where('user_id', Auth::id())->count('Subscription');
+
+
 
        $columns = GetColumn::getColumn();
 
-       return view('registers.index', compact('registers', 'columns'));
+       return view('registers.index', compact('registers', 'columns', 'price','subscription'));
     }
 
     function create()
@@ -29,11 +33,26 @@ class registerController extends Controller
 
     function store(Request $request) {
 
+
+
+
+
+$validated = $request->validate([
+        'subscription' => 'required|max:255',
+        'price' => 'required|integer',
+        'payment_date' => 'required|integer|regex:/^\d{1,2}$/',
+        'detail' => 'required',
+        'url' => 'required|url',
+    ]);
+
+
+
+
         $register = new Register;
         $register->user_id = Auth::id();
         $register->subscription = $request->subscription;
         $register->price = $request->price;
-        $register->payment_date = $request->payment_date;
+        $register->Monthly_payment_date = $request->payment_date;
         $register->detail = $request->detail;
         $register->url = $request->url;
         $register->save();
@@ -43,14 +62,18 @@ class registerController extends Controller
 
 
         // 特定のカラムを除去する例
-        $registers = Register::all();
+        $registers = Register::where('user_id', Auth::id())->get();
         $registers = $registers->each(function ($register) {
         unset($register->created_at);
         unset($register->updated_at);
-});
+        });
 
-// dd($registers);
-        return view('registers.index', compact('columns', 'registers'));
+       $columns = GetColumn::getColumn();
+
+        $price = Register::where('user_id', Auth::id())->sum('Price');
+        $subscription = Register::where('user_id', Auth::id())->count('Subscription');
+
+       return view('registers.index', compact('registers', 'columns', 'price','subscription'));
     }
     public function show($id)
     {

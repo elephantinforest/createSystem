@@ -27,7 +27,7 @@
       <div class="form-group">
         <label for="payment_date">Payment_date</label>
         <div id="payment_date" class="form-control">
-          {{$register->Payment_date}}
+          {{$register->Monthly_payment_date}}
         </div>
       </div>
     <div class="form-group">
@@ -42,15 +42,17 @@
           {{$register->Url}}
         </div>
       </div>
-      <form action="{{route('edit', ['id' => $register->id])}}" method="get" >
-          <button type="submit" class="btn btn-primary">edit</button>
+<div class=" ">
+      <form action="{{route('edit', ['id' => $register->id])}}" method="get" class="mb-5" >
+          <x-adminlte-button type='submit' label="Edit" theme="primary" icon="fas fa-key"/>
       </form>
 
        <form id="delete_{{$register->id}}" action="{{route('destroy', ['id' => $register->id])}}" method="post" >
         @csrf
         @method('delete')
-          <a href="#" data-id="{{ $register->id}}" onclick="deletePost(this)" type="submit" class="btn btn-primary">destroy</a>
+          <a href="#" data-id="{{ $register->id}}" onclick="deletePost(this)" type="submit"><x-adminlte-button class="btn-lg" type="reset" label="Delete" theme="outline-danger" icon="fas fa-lg fa-trash"/></a>
       </form>
+  </div>
       <script>
         function deletePost(e){
           'use strict'
