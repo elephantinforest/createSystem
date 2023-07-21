@@ -46,7 +46,7 @@
 </table>
 @else
 
-<x-adminlte-card title="新規登録" theme="primary" theme-mode="outline"
+<x-adminlte-card title="新規登" theme="primary" theme-mode="outline"
     icon="fas fa-lg fa-envelope" header-class="text-uppercase rounded-bottom border-info"
     removable>
  <h1 > <a  href="registers/create"><p>★Register subscription★</p></a></h1>
