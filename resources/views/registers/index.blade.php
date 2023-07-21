@@ -33,7 +33,7 @@
   <tbody>
     @foreach ($registers as $register )
     <tr>
-      <th scope="row">{{$register->id}}</th>
+      <th scope="row"></th>
 
       <td><a  class=" badge bg-primary text-wrap" href="{{$register->Url}}">{{$register->Subscription}}</a></td>
        <td>{{$register->Price}}円</td>

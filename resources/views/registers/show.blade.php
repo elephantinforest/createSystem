@@ -8,11 +8,7 @@
 
 @section('content')
 
-      <div class="form-group">
-        <label for="service">Id</label>
-        <div class="form-control" id="service">{{$register->id}}
-        </div>
-      </div>
+      
       <div class="form-group">
         <label for="service">Subscription</label>
         <div class="form-control" id="service">{{$register->Subscription}}
