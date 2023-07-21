@@ -52,7 +52,7 @@ $validated = $request->validate([
         $register->user_id = Auth::id();
         $register->subscription = $request->subscription;
         $register->price = $request->price;
-        $register->Monthly_payment_date = $request->payment_date;
+        $register->monthly_payment_date = $request->payment_date;
         $register->detail = $request->detail;
         $register->url = $request->url;
         $register->save();
