@@ -4,7 +4,7 @@
 
 * Gitクローン
 * .env.example をコピーして .env を作成
-* MySQLかPostgreSQLのデータベース作成（名前：item_management）  
+* MySQLかPostgreSQLのデータベース作成（名前：item_management）
   ローカルでMAMPを使用しているのであれば、MySQL推奨
 * .env にデータベース接続情報追加
 ```
