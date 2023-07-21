@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use League\CommonMark\Environment\Environment;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +28,8 @@ class AppServiceProvider extends ServiceProvider
     {
       \Illuminate\Support\Facades\Schema::defaultStringLength(191);
 
+      if (\App::environment(['production'])) {
+            \URL::forceScheme('https');
+        }
     }
 }
