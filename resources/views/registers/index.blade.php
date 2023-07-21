@@ -46,11 +46,14 @@
 </table>
 @else
 
-<x-adminlte-card title="新規登" theme="primary" theme-mode="outline"
-    icon="fas fa-lg fa-envelope" header-class="text-uppercase rounded-bottom border-info"
-    removable>
- <h1 > <a  href="registers/create"><p>★Register subscription★</p></a></h1>
-</x-adminlte-card>
+ <x-adminlte-alert theme="primary" title="新規登録はこちら!">
+    <a  href="registers/create"><x-adminlte-button label="click here" theme="danger" icon="fas fa-key"/></a>
+</x-adminlte-alert>
+
+
+
+
+
 @endif
 @stop
 

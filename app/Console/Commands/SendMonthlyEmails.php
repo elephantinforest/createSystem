@@ -23,12 +23,11 @@ class SendMonthlyEmails extends Command
         $currentDate = Carbon::now()->format('d');
 
 
-        // データベースから日付が$currentDateから2日前のレコードを取得
-        $targetDate = $currentDate - 2;
+        // データベースから日付が$currentDateから2日前のレコードを取
 
         // データベースから日付が現在の日付と一致するレコードを取得
         $users = User::leftJoin('registers', 'users.id', '=', 'registers.user_id')
-    ->select('users.*', 'registers.*')->where('registers.Monthly_payment_date', $targetDate)->get();
+    ->select('users.*', 'registers.*')->where('registers.Monthly_payment_date', $currentDate)->get();
 
     // メールを送信
         foreach ($users as $user) {
