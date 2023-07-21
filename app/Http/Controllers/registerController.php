@@ -90,11 +90,11 @@ $validated = $request->validate([
     public function update(Request $request, $id)
 {
     $register =  Register::find($id);
-     $register->Subscription = $request->subscription;
-     $register->Price = $request->price;
-    $register->Monthly_payment_date = $request->payment_date;
-     $register->Detail = $request->detail;
-     $register->Url = $request->url;
+     $register->subscription = $request->subscription;
+     $register->price = $request->price;
+    $register->monthly_payment_date = $request->payment_date;
+     $register->detail = $request->detail;
+     $register->url = $request->url;
      $register->save();
 
      return redirect()->route('index');
