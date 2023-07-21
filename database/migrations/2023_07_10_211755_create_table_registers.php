@@ -14,7 +14,7 @@ class Createtableregisters extends Migration
             $table->string('Subscription', 100);
             $table->integer('Price');
             $table->integer('Monthly_payment_date');
-            $table->string('Detail', 500);
+            $table->string('Detail', 190);
             $table->string('Url');
             $table->timestamps();
         });
