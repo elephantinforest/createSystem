@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'inspecting disire')
+@section('title', 'inspecting disire!')
 
 @section('content_header')
 
