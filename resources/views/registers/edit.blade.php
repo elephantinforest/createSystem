@@ -19,7 +19,7 @@
       </div>
       <div class="form-group">
         <label for="payment_date">Payment_date</label>
-        <input type="number" name="payment_date" id="payment_date" value="{{$register->Payment_date}}">
+        <input type="number" name="payment_date" id="payment_date" value="{{$register->Monthly_payment_date}}">
       </div>
     <div class="form-group">
         <label for="detail">Service Detail</label>
