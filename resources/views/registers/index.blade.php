@@ -45,12 +45,12 @@
   </tbody>
 </table>
 @else
-<div class="container mt-1">
-  <a  href="registers/create"><p class="fs-1">新規登録</p></a>
-<p class="fs-1">.fs-1 text</p>
 
-</div>
-
+<x-adminlte-card title="新規登録" theme="primary" theme-mode="outline"
+    icon="fas fa-lg fa-envelope" header-class="text-uppercase rounded-bottom border-info"
+    removable>
+ <h1 > <a  href="registers/create"><p>★Register subscription★</p></a></h1>
+</x-adminlte-card>
 @endif
 @stop
 
