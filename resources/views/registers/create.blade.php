@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'inspecting disire')
 
 @section('content_header')
 
@@ -43,7 +43,7 @@
         <label for="url">URL</label>
         <input type="text" name="url" class="form-control" id="url" placeholder="Enter Url">
       </div>
-<x-adminlte-button id="showAlertButton" class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save"/>
+<x-adminlte-button id="showAlertButton" class="btn-flat " type="submit" label="Submit" theme="primary" icon="fas fa-lg fa-save"/>
 
 
 </form>

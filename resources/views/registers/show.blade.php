@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'inspecting disire')
 
 @section('content_header')
 
@@ -21,13 +21,13 @@
       <div class="form-group">
         <label for="price">Price</label>
         <div class="form-control" id="price" >
-          {{$register->Price}}
+          {{$register->Price}}円
         </div>
       </div>
       <div class="form-group">
         <label for="payment_date">Payment_date</label>
         <div id="payment_date" class="form-control">
-          {{$register->Monthly_payment_date}}
+          {{$register->Monthly_payment_date}}日
         </div>
       </div>
     <div class="form-group">
