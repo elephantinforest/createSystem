@@ -13,7 +13,7 @@ class registerController extends Controller
     //
     function index() {
 
-        $registers =  Register::where('user_id', Auth::id())->get();
+        $registers =  Register::where('user_id', Auth::id())->orderBy('Monthly_payment_date')->get();
         $price = Register::where('user_id', Auth::id())->sum('Price');
         $subscription = Register::where('user_id', Auth::id())->count('Subscription');
 
@@ -40,7 +40,7 @@ class registerController extends Controller
 $validated = $request->validate([
         'subscription' => 'required|max:255',
         'price' => 'required|integer',
-        'payment_date' => 'required|integer|regex:/^\d{1,2}$/',
+        'payment_date' => 'required|integer|regex:/^\d{1,2}$/|between:1,31',
         'detail' => 'required',
         'url' => 'required|url',
     ]);
