@@ -8,7 +8,7 @@
 
 @section('content')
 
-      
+
       <div class="form-group">
         <label for="service">Subscription</label>
         <div class="form-control" id="service">{{$register->Subscription}}
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="payment_date">Payment_date</label>
+        <label for="payment_date">Monthly_payment_date</label>
         <div id="payment_date" class="form-control">
           {{$register->Monthly_payment_date}}日
         </div>
