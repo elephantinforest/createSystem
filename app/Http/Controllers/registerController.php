@@ -89,6 +89,16 @@ $validated = $request->validate([
     }
     public function update(Request $request, $id)
 {
+    $validated = $request->validate([
+        'subscription' => 'required|max:255',
+        'price' => 'required|integer',
+        'payment_date' => 'required|integer|regex:/^\d{1,2}$/|between:1,31',
+        'detail' => 'required',
+        'url' => 'required|url',
+    ]);
+
+
+
     $register =  Register::find($id);
      $register->subscription = $request->subscription;
      $register->price = $request->price;

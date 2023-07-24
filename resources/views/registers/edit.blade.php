@@ -7,7 +7,21 @@
 @stop
 
 @section('content')
- <form action="{{route('update', ['id' => $register->id ])}}" method="post" class="form-horizontal">
+
+@if ($errors->any())
+    <div class="alert alert-primary">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+
+<form action="{{route('update', ['id' => $register->id ])}}" method="post" class="form-horizontal">
     @csrf
     <div class="form-group">
         <label for="service">Subscription</label>
