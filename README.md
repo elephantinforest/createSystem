@@ -1,5 +1,5 @@
 # inspecting disire　月額課金管理アプリ
-URL https://inspecting-disire.com/login 
+<a href="https://inspecting-disire.com/login" target="_blank">リンク</a>	
 # 概要
 現代社会では、IT技術の進歩により生活は（）
 | 開発環境 | Docker |
