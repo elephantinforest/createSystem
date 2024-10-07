@@ -19,7 +19,7 @@
 | 開発環境 | Docker |
 | CI/CD |GitHub Actions |
 | デザイン |draw.io |
-| etc | Git, GitHub, Gemini 1.5 Flash  |
+| etc | Git, GitHub|
 
 # 機能一覧
 | ログイン画面 | 
