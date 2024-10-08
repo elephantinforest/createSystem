@@ -17,7 +17,6 @@
 | インフラ　|AWS ECS on fargate|
 | データベース |RDS(mysql) |
 | 開発環境 | Docker |
-| CI/CD |GitHub Actions |
 | デザイン |draw.io |
 | etc | Git, GitHub|
 
